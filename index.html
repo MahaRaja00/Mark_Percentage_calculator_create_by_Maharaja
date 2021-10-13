@@ -8,7 +8,7 @@
     <style>
         body {
 
-            font-family: lemon;
+            font-family:'Verdana';            
             text-transform: capitalize;
             background-image: linear-gradient(-300deg, black, skyblue, black);
             background-repeat: no-repeat;
@@ -20,6 +20,8 @@
 
         form {
             border: 5px solid white;
+
+            background-image:linear-gradient(20deg,rgb(59, 59, 255),rgb(243, 22, 144));
 
             width: 500px;
 
@@ -60,14 +62,18 @@
 
         label {
 
-            color: red;
-            text-shadow: 0px 0px 5px white;
+            color: white;
+            text-shadow: 0px 0px 5px black;
+            font-size: 20px;
+            font-weight: 900;
+            
+
         }
 
         #t1,
         #t2,
         #ans {
-            border: 2px solid red;
+            /* border: 3px solid  ; */
 
             height: 20px;
 
@@ -76,20 +82,27 @@
 
             outline: none;
 
-            border-radius: 20px 5px 20px 5px;
+            border-radius: 40px 5px 40px 5px;
+
+            color:blue;
+
+
 
         }
 
         #t1,
         #t2 {
-            background-image: linear-gradient(100deg, rgb(125, 133, 240), white, rgb(125, 133, 240));
-
+            background-image: linear-gradient(100deg, rgb(116, 253, 139), white, rgb(116, 253, 139));
+            height: 30px;
 
         }
 
         #ans {
 
             background-image: linear-gradient(100deg, rgb(116, 253, 139), white, rgb(116, 253, 139));
+            height: 50px;
+            text-transform: capitalize;
+
 
         }
 
@@ -105,12 +118,13 @@
             margin-right: 15px;
             margin-left: 15px;
 
-            font-family: lemon;
+            font-family:'Verdana';   
 
             letter-spacing: 1px;
 
             border-radius: 20px 5px 20px 5px;
 
+            font-size:15px;
 
 
 
@@ -137,10 +151,10 @@
             }
 
 
-        }
+      
 
         p{
-            font-family:'Times New Roman';
+            font-family:'Verdana';
             opacity:0.3;
 
             position: absolute;
@@ -149,6 +163,13 @@
             
 
         }
+
+        h1{
+            width: auto;
+
+        }
+
+    }
 
     </style>
 
@@ -164,7 +185,7 @@
 
         <form>
             <h1>Mark Percentage Calculator</h1>
-            <label>Your Mark</label><br>
+            <label>Your Total</label><br>
             <input type="text" id="t1" placeholder="Ex:855 or 455"><br><br>
             <p></p>
 
@@ -172,8 +193,8 @@
             <input type="text" id="t2" placeholder="Ex:1200 or 500"><br><br>
             <p></p>
 
-            <label>Your Persetage</label><br>
-            <input type="text" id="ans"><br><br>
+            
+            <input type="text" id="ans" placeholder=" show your percentage"><br><br>
             <p></p>
 
             <input id="btn1" type="button" value="Submit" onclick="sub()">
@@ -183,15 +204,16 @@
 
         </form>
         
-        <p>create by Maharaja</p>
+        <p>Create by Maharaja</p>
     </center>
     <script>
+
         function sub() {
 
             var t1 = parseInt(document.getElementById('t1').value);
             var t2 = parseInt(document.getElementById('t2').value);
 
-            document.getElementById('ans').value = (t1 / t2) * 100;
+            document.getElementById('ans').value = (t1/ t2).toFixed(4) * 100;
 
         }
 
